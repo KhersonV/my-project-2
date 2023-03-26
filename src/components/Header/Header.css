@@ -1,0 +1,114 @@
+/* Header */
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    position: relative;
+}
+.headerContainer::before {
+    content: "We are working from 8 am to 8 pm";
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    background-color: #f3a0e1;
+}
+
+/* Logo */
+.logo {
+    color: white;
+    font-size: 24px;
+    margin-left: 50px;
+    align-items: center;
+}
+
+/* Menu */
+.menuContainer {
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    margin: 5px 0 0 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    top: 10px;
+}
+
+.menuItem {
+    margin: 0 20px;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    text-decoration: none;
+}
+
+.menuItem:hover {
+    background-color: black;
+    color: blue;
+    transition: 500ms;
+}
+/* Favorites */
+.favoritesCount{
+    color: aqua;
+}
+/* Dropdown */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 43px;
+    transform: translateX(-50%);
+    width: 88px;
+    background-color: black;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    display: none;
+    border-radius: 15%;
+}
+
+.dropdown-menu-li {
+    width: 88px;
+    text-align: center;
+    align-items: center;
+}
+.dropdown-menu li > a {
+    width: 88px;
+    padding: 0;
+    margin: 0 auto;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+}
+
+.dropdown:hover .dropdown-menu {
+    background-color: black;
+    display: block;
+}
+.dropdown-menu:hover {
+    background-color: black;
+    display: block;
+}
+.dropdown-menu li > a:hover {
+    color: blue;
+    transition: 500ms;
+}
+
+/* Cart */
+.cart {
+    font-size: 20px;
+    color: white;
+    margin-right: 50px;
+    align-items: center;
+    text-decoration: none;
+}
+
+.cart:hover {
+    color: blue;
+    transition: 500ms;
+}

@@ -1,0 +1,66 @@
+.Reviews-h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .Reviews-item {
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .Reviews-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .Reviews-text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .Reviews-h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .Review-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .Review-input-name,
+  .Review-input-text {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .Review-input-name:focus,
+  .Review-input-text:focus {
+    outline: none;
+    box-shadow: 0 0 5px #ccc;
+  }
+  
+  .Review-input-btn {
+    background-color: #008CBA;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .Review-input-btn:hover {
+    background-color: #006F8E;
+  }
+  

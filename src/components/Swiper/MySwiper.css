@@ -1,0 +1,12 @@
+.swiper-container {
+    margin-top: 40px;
+}
+.swiper-slide {
+    height: 400px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.swiperImg {
+    height: 400px;
+}
