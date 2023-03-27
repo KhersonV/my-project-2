@@ -5,7 +5,7 @@ import "./ArticleList.css";
 import red from "../../img/red-heart-icon.svg";
 import black from "../../img/heart-bl.svg";
 import Reviews from "../Reviews/Reviews";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const ArticleListItem = () => {
     const productsLikeState = useSelector((state) => state.productsLikeState);
@@ -19,7 +19,13 @@ const ArticleListItem = () => {
     return (
         <>
             <div className="itemContainer">
-                <h2 className="category">{article.category}</h2>
+                <h2 className="category"><Link
+                                        className="infoBtn"
+                                        to={`/${article.category}`}
+                                    >
+                                        {" "}
+                                        {article.category}
+                                    </Link>{" "}</h2>
                 <h3 className="title">{article.title}</h3>
                 <p className="description">{article.description}</p>
                 <p className="description">{article.article}</p>
