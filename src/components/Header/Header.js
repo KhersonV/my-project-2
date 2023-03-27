@@ -10,6 +10,7 @@ const Header = () => {
     const likedArticles = articlesArray.filter(
         ({ id }) => productsLikeState[id],
     );
+    
 
     const favoritesCount = likedArticles.length;
 
@@ -28,20 +29,20 @@ const Header = () => {
                     <ul className="dropdown-menu">
                         <li className="dropdown-menu-li">
                             {" "}
-                            <Link to="/trading"> Trading</Link>
+                            <Link to={`/Trading`}> Trading</Link>
                         </li>
                         <li className="dropdown-menu-li">
                             {" "}
-                            <Link to="/it"> IT</Link>{" "}
+                            <Link to="/Programming"> IT</Link>{" "}
                         </li>
                         <li className="menuItem">
-                    <Link className="menuItem" to="/travel">
-                        Travel
-                    </Link>
-                </li>
+                            <Link className="menuItem" to="/Travel">
+                                Travel
+                            </Link>
+                        </li>
                     </ul>
                 </li>
-                
+
                 <li className="menuItem">
                     <Link className="menuItem" to="/favorites">
                         {" "}

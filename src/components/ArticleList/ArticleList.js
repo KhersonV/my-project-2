@@ -17,7 +17,15 @@ const ArticleList = () => {
                 {articlesArray.map((article) => {
                     return (
                         <div key={article.id} className="itemContainer">
-                            <h2 className="category">{article.category}</h2>
+                            <h2 className="category">
+                            <Link
+                                        className="infoBtn"
+                                        to={`/${article.category}`}
+                                    >
+                                        {" "}
+                                        {article.category}
+                                    </Link>{" "}
+                                </h2>
                             <h3 className="title">{article.title}</h3>
                             <p className="description">{article.description}</p>
                             <div className="button-container">
@@ -25,7 +33,7 @@ const ArticleList = () => {
                                     {" "}
                                     <Link
                                         className="infoBtn"
-                                        to={`/article?id=${article.id}`}
+                                        to={`/${article.category}/${article.id}`}
                                     >
                                         {" "}
                                         More info{" "}

@@ -37,11 +37,18 @@
 }
 
 .category {
+    border-radius: 100%;
+    text-align: center;
+    width: 150px;
+    height: 30px;
+    background-color: #4caf50;
     font-size: 18px;
-    color: #666;
+    color: #fff;
     margin-bottom: 5px;
 }
-
+.traiding{
+    background-color: red;
+}
 .title {
     font-size: 24px;
     color: #333;

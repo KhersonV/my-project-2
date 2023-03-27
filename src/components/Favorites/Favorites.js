@@ -12,16 +12,31 @@ const Favorites = () => {
   const likedArticles = articlesArray.filter(({id}) => productsLikeState[id]);
 
   return likedArticles.length === 0 ? (
-    <div>Еще нет понравившихся работ</div>
+    <h2 className="title pageTitle">No liked articles yet</h2>
   ) : (
     <div className="flexItemCont">
       {likedArticles.map((article) => (
         <div key={article.id} className="itemContainer">
-          <h2 className="category">{article.category}</h2>
+          <h2 className="category"><Link
+                                        className="infoBtn"
+                                        to={`/${article.category}`}
+                                    >
+                                        {" "}
+                                        {article.category}
+                                    </Link>{" "}</h2>
           <h3 className="title">{article.title}</h3>
           <p className="description">{article.description}</p>
           <div className="button-container"> 
-          <button className="infoBtn"> <Link className="infoBtn" to={`/article?id=${article.id}`}> More info </Link> </button>
+          <button className="infoBtn">
+                                    {" "}
+                                    <Link
+                                        className="infoBtn"
+                                        to={`/${article.category}/${article.id}`}
+                                    >
+                                        {" "}
+                                        More info{" "}
+                                    </Link>{" "}
+                                </button>
           <button
             className="likeBtn"
             onClick={() => {

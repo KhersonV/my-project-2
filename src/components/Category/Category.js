@@ -4,24 +4,30 @@ import red from "../../img/red-heart-icon.svg";
 import black from "../../img/heart-bl.svg";
 import { addLike, removeLike } from "../redux/likeReducer";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import CoursesPage from "../CoursesPage/CoursesPage";
 
-const Trading = () => {
+const Category = () => {
+    const { category } = useParams();
+    const articleCategory = category;
+
     const dispatch = useDispatch();
     const productsLikeState = useSelector((state) => state.productsLikeState);
-    const categor = "Trading";
-    const tradingArray = articlesArray.filter(
+    const categor = articleCategory;
+    const categoryArray = articlesArray.filter(
         (article) => article.category === categor,
     );
 
     return (
         <>
+            <h2 className="courses"> {categor} Articles</h2>
             <div className="flexItemCont">
-                {tradingArray.map((article) => {
+                {categoryArray.map((article) => {
                     return (
                         <div key={article.id} className="itemContainer">
-                            <h2 className="category">{article.category}</h2>
+                            <h2 className="category traiding">
+                                {article.category}
+                            </h2>
                             <h3 className="title">{article.title}</h3>
                             <p className="description">{article.description}</p>
                             <div className="button-container">
@@ -29,7 +35,7 @@ const Trading = () => {
                                     {" "}
                                     <Link
                                         className="infoBtn"
-                                        to={`/article?id=${article.id}`}
+                                        to={`/${article.category}/${article.id}`}
                                     >
                                         {" "}
                                         More info{" "}
@@ -58,9 +64,9 @@ const Trading = () => {
                     );
                 })}
             </div>
-            <h2 className="courses">Courses</h2>
+            <h2 className="courses"> {categor} Courses</h2>
             <CoursesPage ownCategory={categor} />
         </>
     );
 };
-export default Trading;
+export default Category;

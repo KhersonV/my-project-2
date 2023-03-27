@@ -5,12 +5,12 @@ const CoursesPage = ({ ownCategory }) => {
     const newCourseArray = coursesArray.filter(
         (course) => course.category === ownCategory,
     );
-    
+
     return (
         <div className="container">
             {newCourseArray.map((course) => (
                 <div key={course.id} className="itemContainer">
-                    <img className="img" src={course.img} alt=""/>
+                    <img className="img" src={course.img} alt="" />
                     <div className="title">{course.title}</div>
                     <div className="price">${course.price}</div>
                     <div className="subtitle">Why We Chose It</div>
@@ -37,11 +37,7 @@ const CoursesPage = ({ ownCategory }) => {
                             </li>
                         ))}
                     </ul>
-                    <button
-                        className="button"
-                    >
-                        Buy Course
-                    </button>
+                    <button className="button">Buy Course</button>
                 </div>
             ))}
         </div>
