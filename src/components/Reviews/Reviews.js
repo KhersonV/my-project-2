@@ -1,61 +1,56 @@
-import { useState } from 'react'
-import "./Review.css"
+import { useState } from "react";
+import "./Review.css";
 
 const Reviews = () => {
-
     const arrReviews = [];
 
-    const [reviews, setReviews] = useState(arrReviews)
+    const [reviews, setReviews] = useState(arrReviews);
     const [newReview, setNewReview] = useState({
-        name: '',
-        text: '',
-    })
+        name: "",
+        text: "",
+    });
 
     const handleName = (e) => {
         setNewReview((prevState) => ({
             ...prevState,
             name: e.target.value,
-        }))
-    }
+        }));
+    };
     const handleText = (e) => {
         setNewReview((prevState) => ({
             ...prevState,
             text: e.target.value,
-        }))
-    }
+        }));
+    };
 
     const onSend = (e) => {
-        e.preventDefault()
-        if (newReview.name === '' || newReview.text === '') {
-            alert('All fields are required!')
+        e.preventDefault();
+        if (newReview.name === "" || newReview.text === "") {
+            alert("All fields are required!");
         } else {
             setNewReview({
-                name: '',
-                text: '',
-            })
+                name: "",
+                text: "",
+            });
 
             setReviews((prevState) => {
-                return [...prevState, newReview]
-            })
+                return [...prevState, newReview];
+            });
         }
-    }
-
-
+    };
 
     return (
         <>
-            <h2 className='Reviews-h2'>
-                Reviews
-            </h2>
-            <div className='Reviews-container'>
+            <h2 className="Reviews-h2">Reviews</h2>
+            <div className="Reviews-container">
                 {reviews.map((item, i) => (
-                    <div key={i} className='Reviews-item'>
+                    <div key={i} className="Reviews-item">
                         <div className="Reviews-name"> {item.name}</div>
                         <div className="Reviews-text">{item.text}</div>
                     </div>
                 ))}
             </div>
-            <form onSubmit={onSend} className='Reviews-form'>
+            <form onSubmit={onSend} className="Reviews-form">
                 <h3 className="Reviews-h3">Please leave a review</h3>
                 <div className="Review-box">
                     <input
@@ -80,7 +75,7 @@ const Reviews = () => {
                 </button>
             </form>
         </>
-    )
-}
+    );
+};
 
-export default Reviews
+export default Reviews;
