@@ -7,12 +7,16 @@ import MenuItem from "./MenuItem";
 const Header = () => {
     const productsLikeState = useSelector((state) => state.productsLikeState);
 
+    const productsInCart = useSelector((state) => state.productsInCart);
+
     const likedArticles = articlesArray.filter(
         ({ id }) => productsLikeState[id],
     );
 
     const favoritesCount = likedArticles.length;
 
+    const purchased = articlesArray.filter(({ id }) => productsInCart[id]);
+    const cartCount = purchased.length;
     return (
         <div className="headerContainer">
             <div className="logo">Logo</div>
@@ -52,7 +56,7 @@ const Header = () => {
             </ul>
 
             <MenuItem className="cart" to="/cart">
-                Cart
+                Cart <span className="favoritesCount">{cartCount}</span>
             </MenuItem>
         </div>
     );

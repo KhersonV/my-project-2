@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { omit } from "lodash";
 
 
 
@@ -9,7 +10,7 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         addToCart: (state, action) => ({ ...state, [action.payload]: true }),
-        removeFromCart: (state, action) => ({ ...state, [action.payload]: false }),
+        removeFromCart: (state, action) => omit(state, action.payload),
     },
 });
 
