@@ -12,7 +12,12 @@ const Category = () => {
     const articleCategory = category;
 
     const dispatch = useDispatch();
+
     const productsLikeState = useSelector((state) => state.productsLikeState);
+
+    const productsInCart = useSelector((state)=>state.productsInCart)
+
+
     const categor = articleCategory;
     const categoryArray = articlesArray.filter(
         (article) => article.category === categor,
@@ -65,7 +70,7 @@ const Category = () => {
                 })}
             </div>
             <h2 className="courses"> {categor} Courses</h2>
-            <CoursesPage ownCategory={categor} />
+            <CoursesPage  productsInCart={productsInCart} ownCategory={categor} />
         </>
     );
 };

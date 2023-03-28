@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import Cart from "../Cart/Cart";
 import "./Header.css";
 import { useSelector } from "react-redux";
 import articlesArray from "../../utils/articlesArray";
+
+import MenuItem from "./MenuItem";
 
 const Header = () => {
     const productsLikeState = useSelector((state) => state.productsLikeState);
@@ -10,7 +10,6 @@ const Header = () => {
     const likedArticles = articlesArray.filter(
         ({ id }) => productsLikeState[id],
     );
-    
 
     const favoritesCount = likedArticles.length;
 
@@ -18,45 +17,43 @@ const Header = () => {
         <div className="headerContainer">
             <div className="logo">Logo</div>
             <ul className="menuContainer hamburger">
-                <li className="menuItem">
-                    {" "}
-                    <Link className="menuItem" to="/">
-                        Home
-                    </Link>{" "}
-                </li>
+                <MenuItem className="menuItem" to="/">
+                    Home
+                </MenuItem>
+
                 <li className="menuItem dropdown">
                     Category
                     <ul className="dropdown-menu">
                         <li className="dropdown-menu-li">
                             {" "}
-                            <Link to={`/Trading`}> Trading</Link>
+                            <MenuItem to={`/Trading`}> Trading</MenuItem>
                         </li>
                         <li className="dropdown-menu-li">
                             {" "}
-                            <Link to="/Programming"> IT</Link>{" "}
+                            <MenuItem to="/Programming"> IT</MenuItem>{" "}
                         </li>
                         <li className="menuItem">
-                            <Link className="menuItem" to="/Travel">
+                            <MenuItem className="menuItem" to="/Travel">
                                 Travel
-                            </Link>
+                            </MenuItem>
                         </li>
                     </ul>
                 </li>
 
                 <li className="menuItem">
-                    <Link className="menuItem" to="/favorites">
+                    <MenuItem className="menuItem" to="/favorites">
                         {" "}
                         Favorites{" "}
                         <span className="favoritesCount">
                             {favoritesCount}
                         </span>{" "}
-                    </Link>
+                    </MenuItem>
                 </li>
             </ul>
-            <Link className="cart" to="/cart">
-                {" "}
-                <Cart />{" "}
-            </Link>
+
+            <MenuItem className="cart" to="/cart">
+                Cart
+            </MenuItem>
         </div>
     );
 };

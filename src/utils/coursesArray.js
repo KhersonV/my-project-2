@@ -155,4 +155,10 @@ const coursesArray = [
     },
 ];
 
+export const getProductsObject = (array) =>
+    array.reduce(
+        (object, product) => ({ ...object, [product.id]: product }),
+        {}
+    )
+
 export default coursesArray;

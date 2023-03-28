@@ -53,8 +53,9 @@
 }
 
 .button {
+    width: 200px;
     display: block;
-    background-color: #007bff;
+    background-color: #17851b;
     color: #fff;
     font-size: 16px;
     font-weight: bold;
@@ -65,7 +66,22 @@
 }
 
 .button:hover {
-    background-color: #0062cc;
+    background-color: #4caf50;
+}
+.button-cancel {
+    width: 200px;
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 20px 0 0 110px;
+    background-color: rgb(187, 13, 13);
+}
+.button-cancel:hover {
+    background-color: red;
 }
 
 @media screen and (max-width: 768px) {

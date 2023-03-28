@@ -19,13 +19,12 @@ const ArticleListItem = () => {
     return (
         <>
             <div className="itemContainer">
-                <h2 className="category"><Link
-                                        className="infoBtn"
-                                        to={`/${article.category}`}
-                                    >
-                                        {" "}
-                                        {article.category}
-                                    </Link>{" "}</h2>
+                <h2 className="category">
+                    <Link className="infoBtn" to={`/${article.category}`}>
+                        {" "}
+                        {article.category}
+                    </Link>{" "}
+                </h2>
                 <h3 className="title">{article.title}</h3>
                 <p className="description">{article.description}</p>
                 <p className="description">{article.article}</p>

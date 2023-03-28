@@ -1,7 +1,10 @@
+import { useDispatch } from "react-redux";
 import coursesArray from "../../utils/coursesArray";
+import { addToCart, removeFromCart } from "../redux/cartReducer";
 import "./CoursesPage.css";
 
-const CoursesPage = ({ ownCategory }) => {
+const CoursesPage = ({ ownCategory, productsInCart }) => {
+    const dispatch = useDispatch();
     const newCourseArray = coursesArray.filter(
         (course) => course.category === ownCategory,
     );
@@ -37,7 +40,24 @@ const CoursesPage = ({ ownCategory }) => {
                             </li>
                         ))}
                     </ul>
-                    <button className="button">Buy Course</button>
+                    <button
+                        className={
+                            productsInCart[course.id]
+                                ? "button-cancel"
+                                : "button"
+                        }
+                        onClick={() => {
+                            if (productsInCart[course.id]) {
+                                dispatch(removeFromCart(course.id));
+                            } else {
+                                dispatch(addToCart(course.id));
+                            }
+                        }}
+                    >
+                        {productsInCart[course.id]
+                            ? "Remove from Cart"
+                            : "Buy Course"}
+                    </button>
                 </div>
             ))}
         </div>
