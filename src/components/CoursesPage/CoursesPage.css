@@ -90,7 +90,7 @@
         margin-left: 10px;
     }
 
-    .button {
+    .button , .button-cancel{
         margin-left: 0;
     }
 }
@@ -101,7 +101,7 @@
         margin-left: 0;
     }
 
-    .button {
+    .button, .button-cancel{
         margin: 20px auto 0;
     }
 }
