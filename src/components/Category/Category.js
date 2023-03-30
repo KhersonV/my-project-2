@@ -69,8 +69,17 @@ const Category = () => {
                     );
                 })}
             </div>
-            <h2 className="courses"> {categor} Courses</h2>
-            <CoursesPage  productsInCart={productsInCart} ownCategory={categor} />
+            <>
+  {categor === "Travel"
+    ? null 
+    : (
+      <>
+        <h2 className="courses">{categor} Courses</h2>
+        <CoursesPage productsInCart={productsInCart} ownCategory={categor} />
+      </>
+    )
+  }
+</>
         </>
     );
 };

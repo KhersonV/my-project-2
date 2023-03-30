@@ -1,0 +1,37 @@
+.footer {
+    width: 100%;
+    background-color: black;
+    color: #fff;
+    padding: 0;
+    text-align: center;
+    margin: 20px 0 0 0;
+}
+
+.footer-container {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.icons-menu {
+    display: block;
+    padding: 40px 0 0 0;
+}
+
+.footer-copyright {
+    font-size: 14px;
+    padding: 0;
+}
+.footer-copyright:hover {
+    color: aquamarine;
+    transition: 500ms;
+}
+
+.footer-upArrow {
+    padding: 0;
+}
+.footer-img {
+    width: 100px;
+}
