@@ -1,70 +1,187 @@
-# Getting Started with Create React App
+# 📚 Online Courses Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern web application for browsing and purchasing online courses in various categories: Trading, IT, and Travel. This project demonstrates the use of modern React technologies with Redux state management.
 
-## Available Scripts
+## 🎯 Project Description
 
-In the project directory, you can run:
+This is a fully-functional online learning platform that allows users to:
 
-### `npm start`
+- Browse course catalog by categories
+- Read detailed articles and reviews
+- Add courses to shopping cart
+- Save favorite courses
+- View detailed course information (price, pros, cons)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ✨ Key Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🏠 Home Page
 
-### `npm test`
+- Interactive course slider (Swiper)
+- List of relevant educational articles
+- Quick navigation through categories
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 📖 Course Catalog
 
-### `npm run build`
+- **Trading** - courses on trading and investments
+- **IT/Programming** - courses on programming and development
+- **Travel** - courses on travel
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🛒 Shopping Cart
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Add/remove courses
+- Automatic total price calculation
+- Visual display of item count
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### ❤️ Favorites
 
-### `npm run eject`
+- Save courses for later viewing
+- Favorite course counter in header
+- Quick access to liked materials
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 📄 Detailed Course Information
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Title and description
+- Course price
+- Pros and cons
+- Reasons for course selection
+- Images
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🚀 Technologies
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Frontend
 
-## Learn More
+- **React 18.2.0** - modern library for building user interfaces
+- **React Router 6.9.0** - routing and navigation
+- **Redux Toolkit 1.9.3** - global state management
+- **React Redux 8.0.5** - React bindings for Redux
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### UI Libraries
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Material-UI (MUI) 5.11** - modern components and icons
+- **Emotion** - component styling
+- **Swiper 9.1.1** - carousel/slider for the home page
 
-### Code Splitting
+### Additional
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Lodash 4.17.23** - utility library for data manipulation
+- **Create React App** - build and development tooling
 
-### Analyzing the Bundle Size
+## 📁 Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+src/
+├── components/
+│   ├── ArticleList/        # Article list
+│   ├── Cart/               # Shopping cart
+│   ├── Category/           # Category page
+│   ├── CoursesPage/        # Course display
+│   ├── Favorites/          # Favorite courses
+│   ├── Footer/             # Site footer
+│   ├── Header/             # Header with navigation
+│   ├── Home/               # Home page
+│   ├── IconMenu/           # Icon menu
+│   ├── Main/               # Main routing
+│   ├── redux/              # Redux store and reducers
+│   │   ├── store.js
+│   │   ├── cartReducer.js
+│   │   └── likeReducer.js
+│   ├── Reviews/            # Reviews
+│   └── Swiper/             # Slider component
+├── utils/
+│   ├── articlesArray.js    # Articles data
+│   └── coursesArray.js     # Courses data
+├── img/                    # Images
+├── App.js                  # Main component
+└── index.js                # Entry point
+```
 
-### Making a Progressive Web App
+## 🛠️ Installation and Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Prerequisites
 
-### Advanced Configuration
+- Node.js (version 14.0 or higher)
+- npm or yarn
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Install Dependencies
 
-### Deployment
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Run in Development Mode
 
-### `npm run build` fails to minify
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The application will open in your browser at [http://localhost:3000](http://localhost:3000)
+
+### Production Build
+
+```bash
+npm run build
+```
+
+An optimized version will be created in the `build/` folder
+
+### Run Tests
+
+```bash
+npm test
+```
+
+## 🎨 Implementation Features
+
+### State Management
+
+The application uses **Redux Toolkit** for global state management:
+
+- `cartReducer` - manages shopping cart
+- `likeReducer` - manages favorite courses
+
+### Routing
+
+Implemented using **React Router v6**:
+
+- `/` - home page
+- `/:category` - category course page
+- `/:category/:id` - detailed article information
+- `/cart` - shopping cart
+- `/favorites` - favorites
+
+### Component-Based Architecture
+
+Modular architecture with reusable components, which simplifies maintenance and project scaling.
+
+## 🎓 What I Learned
+
+- Working with modern React stack
+- State management with Redux Toolkit
+- Routing in React applications
+- Working with Material-UI components
+- Creating responsive interfaces
+- Organizing React project structure
+- Working with external libraries (Swiper)
+
+## 🔄 Future Improvements
+
+- [ ] Backend API integration
+- [ ] User authentication
+- [ ] Payment system
+- [ ] Course filtering and search
+- [ ] Mobile responsive design
+- [ ] Review and rating system
+- [ ] User dashboard
+- [ ] Course progress tracking
+
+## 📱 Screenshots
+
+<!-- Add screenshots of your application here -->
+
+## 👨‍💻 Author
+
+Developed as a portfolio project to demonstrate skills with React and modern frontend stack.
+
+## 📄 License
+
+This project was created for educational purposes.
